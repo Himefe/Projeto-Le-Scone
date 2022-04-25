@@ -1,0 +1,45 @@
+body {
+    background: $bege-claro;
+    border: 10px solid $bege-medio;
+    @include d(s){
+        border: none;
+    }
+    
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p, a {
+    @include tipo-1(18);
+}
+
+.offline {
+    background-color: red;
+}
+
+.online {
+    background-color: #00FF00;
+}
+
+.titulo {
+    @include tipo-1(18);
+    text-transform: uppercase;
+    @include d(s){
+        margin-bottom: 40px;
+    } 
+    &::after {
+        content: '';
+        display: block;
+        background: $cinza;
+        width: 70%;
+        float: right;
+        height: 2px;
+        margin-top: 14px;
+        @include d(m){
+            width: 60%;
+        }
+    }
+}

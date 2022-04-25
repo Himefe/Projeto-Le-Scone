@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=PT+Mono&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Le Scone - Restaurante ///</title>
+</head>
+<body>
+
+
+    <main class="container intro">
+        <div class="grid-5">
+            <img src="assets/img/lescone.png" alt="lescone logo" class="logo">
+            <div class="intro-intro">
+                <p>De Seg. à Sab. <span class="abridar" id="abridar"></span><br> das 07:00h às 18:00h</p>
+                <p>Praia de Botafogo, 300<br> Rio de Janeiro - RJ</p>
+            </div>
+            <a href="#tel:+5502124123333" class="intro-telefone">+55 021 2412-3333</a>
+        </div>
+        <div class="grid-7">
+            <img src="assets/img/foto.jpg" alt="Foto de LeScone">
+        </div>
+    </main>
+    
+    <section class="container menu">
+        <h1 class="grid-4 titulo">Menu</h1>
+        <div class="grid-7 offset-1">
+            <div class="menu-item">
+                <img src="assets/img/prato-1.png" alt="Prato de entrada">
+                <h2>Entrada</h2>
+                <ul>
+                    <li><span>R$1,70</span>Ovos mexidos</li>
+                    <li><span>R$2,70</span>Scones de Frutas</li>
+                    <li><span>R$3,70</span>Joelho de Queijo</li>
+                    <li><span>R$4,70</span>Presunto Cozido</li>
+                    <li><span>R$3,70</span>Coxinha de Frango</li>
+                </ul>
+            </div>
+            <div class="menu-item">
+                <img src="assets/img/prato-2.png" alt="Prato de entrada">
+                <h2>Pratos Principais</h2>
+                <ul>
+                    <li><span>R$20,70</span>Penne com Queijo</li>
+                    <li><span>R$22,70</span>Feijoada</li>
+                    <li><span>R$33,70</span>Costela ao Barbecue</li>
+                    <li><span>R$27,70</span>Medalhão de Frango</li>
+                    <li><span>R$23,70</span>Strogonoff com Queijos</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container contato">
+        <h1 class="grid-4 titulo">Contato</h1>
+        <div class="grid-7 offset-1">
+            <form>
+                <label>Nome</label>
+                <input type="text">
+                <div class="row">
+                    <div class="grid-7">
+                        <label>Email</label>
+                        <input type="text">
+                    </div>
+                    <div class="grid-5">
+                        <label>Telefone</label>
+                        <input type="tel">
+                    </div>
+                </div>
+                <label>Mensagem</label>
+                <textarea></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contato-info">
+                <p>contato@lescone.com ////</p>
+                <p>+55 021 2412-3333 ////</p>
+            </div>
+            <a href="#" class="contato-mapa">
+                <img src="assets/img/map.png" alt="Mapa Lescone">
+            </a>
+        </div>
+    </section>
+ 
+    <footer>
+        <div class="container footer">
+            <p>Le Scone © 1989 - 2016. Alguns direitos reservados</p>
+            <a href="index.html" target="_blank">
+                <img src="assets/img/lescone-icone.png" alt="Marca LeScone">
+            </a>
+        </div>
+    </footer>
+    <script>
+        var data = new Date();
+        var horas = data.getHours();
+        var dia = data.getDay();
+        var element = document.getElementById('abridar');
+        
+    
+        if (dia != 0 && horas >= 7 && horas < 18) {
+            element.classList.add('online');
+            element.classList.remove('offline');
+        } else if  (horas >= 18){
+            element.classList.remove('online');
+            element.classList.add('offline');    
+        } else if(dia == 0){
+            element.classList.remove('online');
+            element.classList.add('offline');
+        }
+        console.log(dia);
+     </script>
+    
+</body>
+</html>
